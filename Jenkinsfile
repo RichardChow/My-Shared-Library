@@ -4,14 +4,18 @@ pipeline {
 	agent any
 	stages{
 	    stage('test vars'){
-	    	script{
-	    		test.test()
+	    	steps{
+	    		script{
+	    			test.test()
+	    		}
 	    	}
 	    }
 	    stage('test src'){
-	    	script{
-	    		def nofity = new com.ecic.automation.base.Nofity()
-	    		nofity.printClassName('test class')
+	    	steps{
+	    	   	script{
+	    			def nofity = new com.ecic.automation.base.Nofity()
+	    			nofity.printClassName('test class')
+	    		}
 	    	}
 	    }
 	 }
